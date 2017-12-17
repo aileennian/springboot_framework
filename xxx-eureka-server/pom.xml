@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.huixiaoer.xxx</groupId>
+		<artifactId>xxx-pom</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.huixiaoer.xxx</groupId>
+	<artifactId>xxx-eureka-server</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>xxx-eureka</name>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.netflix.eureka/eureka-client -->
+		<dependency>
+			<groupId>com.netflix.eureka</groupId>
+			<artifactId>eureka-client</artifactId>
+			<!-- <version>1.1.134</version>
+			<scope>runtime</scope> -->
+		</dependency>
+	
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+				<!-- <configuration> <imageName>microservice-discovery-eureka-dockerfile</imageName> 
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory> <resources> 
+					<resource> <targetPath>/</targetPath> <directory>${project.build.directory}</directory> 
+					<include>${project.build.finalName}.jar</include> </resource> </resources> 
+					</configuration> -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- maven插件:docker-maven-plugin -->
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.23.0</version>
+				<configuration>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

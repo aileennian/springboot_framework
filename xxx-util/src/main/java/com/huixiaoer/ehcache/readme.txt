@@ -1,0 +1,2 @@
+1、需要在web工程是城集成一个ehcache的配置文件
+2、maven里集成ehcache的包

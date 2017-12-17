@@ -1,0 +1,362 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.huixiaoer.xxx</groupId>
+	<artifactId>xxx-pom</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>xxx</name>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<encoding>UTF-8</encoding>
+
+		<spring.boot.version>1.5.1.RELEASE</spring.boot.version>
+		<!-- <current-project.version>${project.parent.version}</current-project.version> 
+			<current-project.name>${parent.name}</current-project.name> -->
+	</properties>
+
+	<modules>
+		<module>xxx-web</module>
+		<module>xxx-util</module>
+		<module>xxx-websocket</module>
+		<module>xxx-xxx1-service</module>
+		<module>xxx-auth-service</module>
+		<module>xxx-eureka-server</module>
+		<module>xxx-web-admin</module>
+		<module>xxx-spider</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<!-- 调试工具（devtools） -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>false</optional>
+			<scope>false</scope>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
+
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+			<optional>false</optional>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件 end -->
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<!-- <exclusions> <exclusion> <groupId>io.reactivex</groupId> <artifactId>rxjava</artifactId> 
+				</exclusion> <exclusion> <groupId>io.netty</groupId> <artifactId>netty-common</artifactId> 
+				</exclusion> </exclusions> -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+			<version>1.2.8.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+			<!-- <exclusions> <exclusion> <groupId>io.reactivex</groupId> <artifactId>rxjava</artifactId> 
+				</exclusion> <exclusion> <groupId>io.netty</groupId> <artifactId>netty-common</artifactId> 
+				</exclusion> </exclusions> -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+		</dependency>
+
+		<!-- 调试工具（devtools） -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+			<optional>false</optional>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件 end -->
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+
+		<!-- 程序监控、运维 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+
+		<!--swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>swagger-bootstrap-ui</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.caspar-chen</groupId>
+			<artifactId>swagger-ui-layer</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.9.RELEASE</version>
+				<!-- <version>2.0.0.M7</version> -->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR7</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- profiles: 目前主要是对web项目中的静态资源进行过滤，如果你的静态资源中有变量需要，请删除这一段 -->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<filters>
+					<filter>../vars/vars.dev.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+
+			<build>
+				<filters>
+					<filter>../vars/vars.test.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>pre</id>
+			<build>
+				<filters>
+					<filter>../vars/vars.pre.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<build>
+				<filters>
+					<filter>../vars/vars.prod.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<skipTests>true</skipTests>
+					<maven.test.skip>true</maven.test.skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<compilerArgument>-parameters</compilerArgument>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+					<delimiters>
+						<delimiter>$[*]</delimiter>
+					</delimiters>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.7.0</version>
+			</plugin>
+
+			<!-- maven插件:docker-maven-plugin -->
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.23.0</version>
+				<configuration>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.ftl</include>
+					<include>**/*.properties</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+
+				<plugin>
+					<inherited>true</inherited><!-- 是否执行聚合 -->
+					<artifactId>maven-deploy-plugin</artifactId>
+					<configuration>
+						<updateReleaseInfo>true</updateReleaseInfo>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+
+	<!-- <distributionManagement> <repository> <id>nexus-releases</id> <name>NexusReleases</name> 
+		<url>http://192.168.1.12:8081/repository/maven-releases/</url> </repository> 
+		<snapshotRepository> <id>nexus-snapshots</id> <name>NexusSnapshots</name> 
+		<url>http://192.168.1.12:8081/repository/maven-snapshots/</url> </snapshotRepository> 
+		</distributionManagement> -->
+
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>

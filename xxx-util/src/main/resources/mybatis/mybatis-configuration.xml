@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false"></setting>
+		<setting name="lazyLoadingEnabled" value="false"></setting>
+		<setting name="multipleResultSetsEnabled" value="true"></setting>
+		<setting name="useColumnLabel" value="true"></setting>
+		<setting name="useGeneratedKeys" value="false"></setting>
+		<setting name="defaultExecutorType" value="SIMPLE"></setting>
+		<setting name="defaultStatementTimeout" value="25000"></setting>
+	</settings>
+</configuration>
