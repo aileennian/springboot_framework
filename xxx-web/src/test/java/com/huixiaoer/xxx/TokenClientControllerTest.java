@@ -17,7 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.huixiaoer.auth.Constant;
 import com.huixiaoer.spring.SpringContextHolder;
-import com.huixiaoer.xxx.api.AppWebXxx;
+import com.huixiaoer.xxx.web.AppWebXxx;
 
 /**
  * springboot 使用MockMvc对controller进行测试

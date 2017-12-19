@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -51,10 +50,12 @@ public class HomeController extends BaseController{
     /**
      * 本地服务实例信息
      * */
-    @GetMapping("/instance-info")
-    public ServiceInstance showInfo(){
-       ServiceInstance service = discoveryClient.getLocalServiceInstance();
-       //ServiceInstance localServiceInstance = this.discoveryClient.getInstanceRemoteStatus();
-        return service;
+	@RequestMapping("/serviceinfo")
+	@ResponseBody
+    public String showInfo(){
+    	ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+        String instances = "/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId();
+        logger.info(instances);
+        return instances;
     }
 }

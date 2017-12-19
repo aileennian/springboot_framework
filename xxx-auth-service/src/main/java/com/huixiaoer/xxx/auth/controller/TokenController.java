@@ -48,24 +48,21 @@ public class TokenController extends BaseController {
 	 * 
 	 * 利用401状态码和响应头WWW-Authenticate来搞一搞，玩一下，但是这种方式很不安全···base64太容易就被破解了。
 	 * 需要知道的是，在第一次认证的时候，初次响应是没有完整的响应头的；在认证过后，浏览器在会话存活之间，每一次请求都会带着请求头Authorization
-	 * 
 	 * @param username
 	 * @param password
 	 * @param request
 	 * @param response
 	 * @return
+	 * 
 	 */
 	@ApiOperation(value = "登录", notes = "在发送请求时，请将信息保存在Header的Authorization里。登录成功，返回token串")
 	@ApiImplicitParams({ @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
 			@ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String"),
 			@ApiImplicitParam(name = "validationCode", value = "验证码", required = false, dataType = "String"), })
-	@RequestMapping(value = "/login", method = { RequestMethod.POST, RequestMethod.GET })
-	public ResponseEntity<String> login(@RequestBody(required = true) String param,
-			// @RequestParam(required=true) String password,
-			// @RequestParam(required=false) String validationCode,
+	@RequestMapping(value = "/login", method = { RequestMethod.POST,RequestMethod.GET })
+	public ResponseEntity<ResultVo<UserMode>> login(@RequestBody(required = true) String param,
 			HttpServletRequest req, HttpServletResponse res) {
 
-		// eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJqd3QiLCJpYXQiOjE1MTM1MDQwODAsInN1YiI6IntcInVzZXJJZFwiOjQ1LFwibG9naW5OYW1lXCI6XCJhYVwiLFwicm9sZUlkc1wiOm51bGwsXCJ1dWlkXCI6XCIxOWU2MWI4N2QxZTY0ODE2YjkxYTc5MzkwODljMjJiZFwifSIsImV4cCI6MTUxMzU5MDQ4MH0.-nckR57IBQ-Gp0LJq5Wv-IrAZJ20m6ktSgLbrvEUOlE
 		JsonParser jp = new JsonParser();
 		JsonObject jsonObj = jp.parse(param).getAsJsonObject();
 
@@ -74,8 +71,6 @@ public class TokenController extends BaseController {
 
 		Assert.notNull(username, "用户名称不能为空！");
 		Assert.notNull(password, "密码不能为空！");
-		// username = "aa";
-		// password = "111";
 
 		// HttpSession session = req.getSession();
 		// //sessionId需要修订
@@ -93,7 +88,7 @@ public class TokenController extends BaseController {
 				!user.getPassword().equals(password)) { // 密码错误
 
 			vo.setError(ResultStatus.USERNAME_OR_PASSWORD_ERROR);
-			return new ResponseEntity<String>(vo.toString(), HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>(vo, HttpStatus.UNAUTHORIZED);
 		}
 
 		// String encoding = Base64Encoder.encode ("test1:test1");
@@ -109,7 +104,7 @@ public class TokenController extends BaseController {
 			// e.printStackTrace();
 			logger.trace(e);
 			vo.setError(ResultStatus.USER_CREATE_TOKEN);
-			return new ResponseEntity<>(vo.toString(), HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>(vo, HttpStatus.UNAUTHORIZED);
 		}
 		UserMode userMode = new UserMode();
 		userMode.setLoginName(username);
@@ -117,23 +112,23 @@ public class TokenController extends BaseController {
 		userMode.setToken(token);
 		userMode.setRoleIds(user.getRoleIds());
 		vo.setOk(userMode);
-		return new ResponseEntity<>(vo.toString(), HttpStatus.OK);
+		return new ResponseEntity<>(vo, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/logout", method = { RequestMethod.DELETE, RequestMethod.GET })
+	@RequestMapping(value = "/logout", method = { RequestMethod.DELETE})
 	@Login
 	@ApiOperation(value = "登出", notes = "")
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = Constant.AUTHORIZATION, value = "token", required = false, dataType = "string", paramType = "header")
 	})
-	public ResponseEntity<String> logout(HttpServletRequest req, HttpServletResponse res) {
+	public ResponseEntity<ResultVo<String>> logout(HttpServletRequest req, HttpServletResponse res) {
 		String userId = (String) req.getAttribute(Constant.CURRENT_USER_ID);
 		if (userId!=null){
 			tokenManager.deleteToken(Long.valueOf(userId));
 		}
 		ResultVo<String> vo = new ResultVo<String>();// .error(ResultStatus.USER_CREATE_TOKEN)
 		vo.setSuccess(true);
-		return new ResponseEntity<>(vo.toString(), HttpStatus.OK);
+		return new ResponseEntity<>(vo, HttpStatus.OK);
 	}
 
 
@@ -142,14 +137,14 @@ public class TokenController extends BaseController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "token", value = Constant.AUTHORIZATION, required = true, dataType = "string", paramType = "header") })
 	@Login
-	public String getCurrentUser(@CurrentUser User user) {
-		ResultVo<UserInfo> vo = new ResultVo<UserInfo>();// .error(ResultStatus.USER_CREATE_TOKEN)
+	public ResultVo<UserInfo> getCurrentUser(@CurrentUser User user) {
+		ResultVo<UserInfo> vo = new ResultVo<UserInfo>();//.error(ResultStatus.USER_CREATE_TOKEN)
 		UserInfo userinfo = new UserInfo();
 		userinfo.setLoginClientIp(user.getLoginClientIp());
 		userinfo.setUserName(user.getUserName());
 		userinfo.setUserId(user.getUserId());
 		vo.setOk(userinfo);
-		return vo.toString();
+		return vo;
 	}
 
 	@ApiOperation(value = "检测token的有效性，并返回UserMode", notes = "")

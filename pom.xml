@@ -30,6 +30,7 @@
 		<module>xxx-eureka-server</module>
 		<module>xxx-web-admin</module>
 		<module>xxx-spider</module>
+		<module>xxx-zuul-server</module>
 	</modules>
 
 	<dependencies>
