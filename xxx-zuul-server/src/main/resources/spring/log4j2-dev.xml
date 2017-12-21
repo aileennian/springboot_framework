@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration monitorInterval="1000">
+	<appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n" />
+		</Console>
+		<RollingFile name="RollingFile" fileName="logs/nian.log"
+			filePattern="logs/log-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout charset="UTF-8"
+				pattern="%-d{yyyy-MM-dd HH:mm:ss} [%thread] %m%n" />
+			<SizeBasedTriggeringPolicy size="50MB" />
+		</RollingFile>
+	</appenders>
+	<loggers>
+		<root level="debug">
+			<appenderref ref="ConsoleAppender" />
+			<appenderref ref="RollingFile" />
+		</root>
+
+		<Logger name="org.apache.catalina" level="error" />
+		<Logger name="org.apache.coyote" level="error" />
+		<logger name="org.apache.sshd" level="error" />
+		<Logger name="org.apache.tomcat" level="error" />
+		<Logger name="org.crsh.plugin" level="error" />
+		<logger name="org.crsh.ssh" level="error" />
+		<logger name="org.springframework" level="warn" />
+		<logger name="org.apache.http" level="warn" />
+		<!-- 
+		<logger name="org.springframework.core" level="info" />
+		<logger name="org.springframework.beans" level="info" />
+		<logger name="org.springframework.context" level="info" />
+		<logger name="org.springframework.web" level="info" />
+		<logger name="org.jboss.netty" level="warn" />
+		<logger name="org.apache.http" level="warn" />
+		-->
+	</loggers>
+
+	
+</configuration>
