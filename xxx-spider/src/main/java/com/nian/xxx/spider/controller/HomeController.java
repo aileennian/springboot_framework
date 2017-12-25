@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.controller;
+package com.nian.xxx.spider.controller;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.huixiaoer.xxx.spider.config.ConfigProperties;
+import com.nian.xxx.spider.config.ConfigProperties;
 
 /**
  * @Value使用补充 读取配置文件的值

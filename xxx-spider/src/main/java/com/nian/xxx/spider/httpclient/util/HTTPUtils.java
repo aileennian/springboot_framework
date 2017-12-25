@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.httpclient.util;
+package com.nian.xxx.spider.httpclient.util;
 
 import io.swagger.annotations.Api;
 import java.io.IOException;

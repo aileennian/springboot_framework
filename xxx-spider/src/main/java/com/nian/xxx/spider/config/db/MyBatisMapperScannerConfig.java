@@ -1,11 +1,11 @@
-package com.huixiaoer.xxx.spider.config.db;
+package com.nian.xxx.spider.config.db;
 
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.huixiaoer.mybatis.BaseMybatisConfigure;
+import com.nian.mybatis.BaseMybatisConfigure;
 
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 

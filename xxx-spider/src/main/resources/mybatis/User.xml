@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <!-- #相当于对数据 加上 双引号，$相当于直接显示数据 -->
-<mapper namespace="com.huixiaoer.xxx.auth.mapper.UserMapper">
-	<resultMap id="BaseResultMap" type="com.huixiaoer.xxx.auth.entity.User">
+<mapper namespace="com.nian.xxx.auth.mapper.UserMapper">
+	<resultMap id="BaseResultMap" type="com.nian.xxx.auth.entity.User">
 		<id property="userId" column="USER_ID" jdbcType="INTEGER"></id>
 		<result property="userName" column="USER_NAME" jdbcType="VARCHAR"></result>
 		<result property="password" column="PASSWORD" jdbcType="DATE"></result>
@@ -42,7 +42,7 @@
 		<include refid="Base_Column_List" />
 		from blog_user
 	</select>
-	<insert id="insertUser" parameterType="com.huixiaoer.xxx.auth.entity.User">
+	<insert id="insertUser" parameterType="com.nian.xxx.auth.entity.User">
 		insert into blog_user (
 			USER_NAME,
 			PASSWORD,

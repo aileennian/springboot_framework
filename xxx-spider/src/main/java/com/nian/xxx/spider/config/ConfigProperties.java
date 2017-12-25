@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.config;
+package com.nian.xxx.spider.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;

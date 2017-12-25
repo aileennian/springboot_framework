@@ -5,4 +5,4 @@
  * @author admin
  *
  */
-package com.huixiaoer.xxx.spider.mapper;
+package com.nian.xxx.spider.mapper;

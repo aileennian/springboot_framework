@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.entity;
+package com.nian.xxx.spider.entity;
 
 
 

@@ -4,7 +4,7 @@
 		<Console name="ConsoleAppender" target="SYSTEM_OUT">
 			<PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n" />
 		</Console>
-		<RollingFile name="RollingFile" fileName="logs/huixiaoer.log"
+		<RollingFile name="RollingFile" fileName="logs/nian.log"
 			filePattern="logs/log-%d{yyyy-MM-dd}-%i.log.gz">
 			<PatternLayout charset="UTF-8"
 				pattern="%-d{yyyy-MM-dd HH:mm:ss} [%thread] %m%n" />

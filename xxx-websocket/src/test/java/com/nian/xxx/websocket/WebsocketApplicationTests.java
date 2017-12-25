@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.websocket;
+package com.nian.xxx.websocket;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

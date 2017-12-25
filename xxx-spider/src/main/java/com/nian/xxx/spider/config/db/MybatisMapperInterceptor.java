@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.config.db;
+package com.nian.xxx.spider.config.db;
 
 import java.lang.reflect.Method;
 
@@ -8,9 +8,9 @@ import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 import org.springframework.aop.ThrowsAdvice;
 
-import com.huixiaoer.mybatis.base.DynamicDataSource;
-import com.huixiaoer.mybatis.multi.DataSourceContextHolder;
-import com.huixiaoer.mybatis.multi.DynamicDataSourceType;
+import com.nian.mybatis.base.DynamicDataSource;
+import com.nian.mybatis.multi.DataSourceContextHolder;
+import com.nian.mybatis.multi.DynamicDataSourceType;
 
 //InvocationHandler mybatis
 

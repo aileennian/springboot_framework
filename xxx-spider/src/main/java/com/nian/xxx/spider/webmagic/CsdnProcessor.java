@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.webmagic;
+package com.nian.xxx.spider.webmagic;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.huixiaoer.xxx.spider.entity.CsdnBlog;
+import com.nian.xxx.spider.entity.CsdnBlog;
 
 import io.swagger.annotations.Api;
 import us.codecraft.webmagic.Page;
@@ -24,12 +24,13 @@ import us.codecraft.webmagic.processor.PageProcessor;
 public class CsdnProcessor implements PageProcessor {
 	public static Logger logger = LogManager.getLogger(CsdnProcessor.class);
 	
-    private static String username = "qq598535550";// 设置csdn用户名
+    private static String username = "";// 设置csdn用户名
     private static int size = 0;// 共抓取到的文章数量	
 
 	private Site site = Site.me().setSleepTime(0).setCycleRetryTimes(3);
 
 	/**
+	 * http://www.ccgp-xuzhou.gov.cn/Home/HomeList?category_id=331
 	 * csdn uri 后缀
 	 */
 	public static final String CSDN_URI = "zhengyong15984285623";
@@ -37,7 +38,7 @@ public class CsdnProcessor implements PageProcessor {
 	@Override
 	public void process(Page page) {
 	      // 列表页
-        if (!page.getUrl().regex("http://blog\\.csdn\\.net/" + username + "/article/details/\\d+").match()) {
+        if (!page.getUrl().regex("http://www\\.ccgp-xuzhou\\.gov\\.cn/Home/HomeList?category_id=331\\d+").match()) {
             // 添加所有文章页
             page.addTargetRequests(page.getHtml().xpath("//div[@id='article_list']").links()// 限定文章列表获取区域
                     .regex("/" + username + "/article/details/\\d+")

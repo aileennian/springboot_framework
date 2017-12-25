@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider;
+package com.nian.xxx.spider;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

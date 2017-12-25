@@ -1,7 +1,6 @@
-package com.huixiaoer.xxx.spider.config;
+package com.nian.xxx.spider.config;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

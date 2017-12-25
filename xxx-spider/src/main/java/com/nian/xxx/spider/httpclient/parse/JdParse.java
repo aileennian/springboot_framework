@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.httpclient.parse;
+package com.nian.xxx.spider.httpclient.parse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.huixiaoer.xxx.spider.entity.JdModel;
+import com.nian.xxx.spider.entity.JdModel;
 
 import io.swagger.annotations.Api;
 

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.huixiaoer.xxx</groupId>
+	<groupId>com.nian.xxx</groupId>
 	<artifactId>xxx-pom</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -47,31 +47,22 @@
 			<optional>false</optional>
 			<scope>false</scope>
 		</dependency>
-		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
-
-
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>springloaded</artifactId>
-			<optional>false</optional>
 		</dependency>
 		<!--springboot中修改完文件后自动reload的插件 end -->
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-			<!-- <exclusions> <exclusion> <groupId>io.reactivex</groupId> <artifactId>rxjava</artifactId> 
-				</exclusion> <exclusion> <groupId>io.netty</groupId> <artifactId>netty-common</artifactId> 
-				</exclusion> </exclusions> -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>springloaded</artifactId>
-			<version>1.2.8.RELEASE</version>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -97,7 +88,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
@@ -108,6 +105,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-cbor</artifactId>
+			<version>2.9.3</version>
+		</dependency>
+		
 		<!--springboot中修改完文件后自动reload的插件，修改完文件Ctrl + F9 Make一下就可以 -->
 
 		<dependency>
@@ -121,6 +125,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 

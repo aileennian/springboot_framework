@@ -5,4 +5,4 @@
  * @author admin
  *
  */
-package com.huixiaoer.xxx.spider.config.db;
+package com.nian.xxx.spider.config.db;

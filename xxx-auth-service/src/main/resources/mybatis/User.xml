@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <!-- #相当于对数据 加上 双引号，$相当于直接显示数据 -->
-<mapper namespace="com.huixiaoer.xxx.auth.mapper.UserMapper">
-	<resultMap id="BaseResultMap" type="com.huixiaoer.xxx.auth.entity.User">
+<mapper namespace="com.nian.xxx.auth.mapper.UserMapper">
+	<resultMap id="BaseResultMap" type="com.nian.xxx.auth.entity.User">
 		<id property="userId" column="USER_ID" jdbcType="INTEGER"></id>
 		<result property="userName" column="USER_NAME" jdbcType="VARCHAR"></result>
 		<result property="password" column="PASSWORD" jdbcType="DATE"></result>
@@ -23,28 +23,28 @@
 		user where user_id = #{userId,jdbcType=BIGINT} </select> -->
 	<select id="findByUsername" resultMap="BaseResultMap"
 		parameterType="string">
-		select * from blog_user where user_name = #{userName};
+		select * from auth_user where user_name = #{userName};
 	</select>
 
 	<select id="findByUserId" resultMap="BaseResultMap" parameterType="long">
 		select 
 				<include refid="Base_Column_List" />
-		 from blog_user where user_id = #{userId};
+		 from auth_user where user_id = #{userId};
 	</select>
 
 	<select id="findAllByPage" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from blog_user
+		from auth_user
 	</select>
 
 	<select id="findAll" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from blog_user
+		from auth_user
 	</select>
-	<insert id="insertUser" parameterType="com.huixiaoer.xxx.auth.entity.User">
-		insert into blog_user (
+	<insert id="insertUser" parameterType="com.nian.xxx.auth.entity.User">
+		insert into auth_user (
 			USER_NAME,
 			PASSWORD,
 			lAST_LOGIN_TIME,

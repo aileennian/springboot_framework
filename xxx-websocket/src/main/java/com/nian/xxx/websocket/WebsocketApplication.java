@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.websocket;
+package com.nian.xxx.websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

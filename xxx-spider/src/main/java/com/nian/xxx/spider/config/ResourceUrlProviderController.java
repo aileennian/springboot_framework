@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.config;
+package com.nian.xxx.spider.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,7 +15,6 @@ import org.springframework.web.servlet.resource.ResourceUrlProvider;
  *      spring.resources.chain.strategy.content.paths=/**
  * <p/>
  */
-
 @ControllerAdvice
 public class ResourceUrlProviderController {
     @Autowired

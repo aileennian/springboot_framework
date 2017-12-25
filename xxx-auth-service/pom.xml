@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.huixiaoer.xxx</groupId>
+		<groupId>com.nian.xxx</groupId>
 		<artifactId>xxx-pom</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>xxx-auth-service</artifactId>
-	<groupId>com.huixiaoer.xxx</groupId>
+	<groupId>com.nian.xxx</groupId>
 	<version>1.0.1-SNAPSHOT</version>
 	<dependencies>
 		
@@ -104,7 +104,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.huixiaoer.xxx</groupId>
+			<groupId>com.nian.xxx</groupId>
 			<artifactId>xxx-util</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
 		</dependency>

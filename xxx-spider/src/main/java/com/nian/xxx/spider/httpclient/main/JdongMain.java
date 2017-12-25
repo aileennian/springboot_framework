@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.httpclient.main;
+package com.nian.xxx.spider.httpclient.main;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.huixiaoer.xxx.spider.entity.JdModel;
-import com.huixiaoer.xxx.spider.httpclient.util.URLFecter;
+import com.nian.xxx.spider.entity.JdModel;
+import com.nian.xxx.spider.httpclient.util.URLFecter;
 
 import io.swagger.annotations.Api;
 

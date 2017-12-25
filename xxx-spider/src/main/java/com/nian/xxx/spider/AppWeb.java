@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider;
+package com.nian.xxx.spider;
 
 import java.util.EnumSet;
 
@@ -21,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import org.tuckey.web.filters.urlrewrite.UrlRewriteFilter;
 
-import com.huixiaoer.xxx.spider.config.RichFreeMarkerView;
+import com.nian.xxx.spider.config.RichFreeMarkerView;
 
 import freemarker.template.utility.XmlEscape;
 

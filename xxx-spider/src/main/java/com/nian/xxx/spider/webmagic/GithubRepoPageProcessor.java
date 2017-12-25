@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.webmagic;
+package com.nian.xxx.spider.webmagic;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

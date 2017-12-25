@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.httpclient.mapper;
+package com.nian.xxx.spider.httpclient.mapper;
 
 public class JdModelMapper {
 

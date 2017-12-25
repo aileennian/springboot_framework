@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.config.db;
+package com.nian.xxx.spider.config.db;
 
 import java.sql.SQLException;
 import java.util.Map;
@@ -19,13 +19,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.huixiaoer.mybatis.BaseMybatisConfigure;
-import com.huixiaoer.mybatis.aop.DataSourceMybatisPlugin;
-import com.huixiaoer.mybatis.aop.DataSourceSpringAspect;
-import com.huixiaoer.mybatis.multi.DataSourceRoutingProxy;
-import com.huixiaoer.mybatis.multi.DynamicDataSourceTransactionManager;
-import com.huixiaoer.mybatis.properties.DataSourceProperties;
-import com.huixiaoer.mybatis.properties.Read1DataSourceProperties;
+import com.nian.mybatis.BaseMybatisConfigure;
+import com.nian.mybatis.aop.DataSourceMybatisPlugin;
+import com.nian.mybatis.aop.DataSourceSpringAspect;
+import com.nian.mybatis.multi.DataSourceRoutingProxy;
+import com.nian.mybatis.multi.DynamicDataSourceTransactionManager;
+import com.nian.mybatis.properties.DataSourceProperties;
+import com.nian.mybatis.properties.Read1DataSourceProperties;
 
 
 /**

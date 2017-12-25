@@ -1,4 +1,4 @@
-package com.huixiaoer.xxx.spider.controller;
+package com.nian.xxx.spider.controller;
 
 import java.util.Map;
 
