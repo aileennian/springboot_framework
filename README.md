@@ -1,4 +1,15 @@
-<<<<<<< HEAD
+######内容包括：
+一、eureka注册中心
+二、eureka客户端（provider)
+三、消费端
+四、读写分离（多数据源）
+五、jwt+redis+token的验证
+六、swagger2文档编写
+七、redis等封装好了很多工具包
+八、springboot各种用户的技巧
+九、框架各处规则（崇尚直接通过代码去规范）
+十、未来计划：爬虫、聊天等框架
+
 
 
 ####Swageger2常用注解 [更多...](http://blog.csdn.net/u014231523/article/details/76522486)s
@@ -17,6 +28,4 @@
 - @ApiImplicitParam() 用于方法 
 表示单独的请求参数 
 - @ApiImplicitParams() 用于方法，包含多个 @ApiImplicitParam
-=======
-#我的第一份github
->>>>>>> 93a222034033319f3da22b106fa6eb6122705208
+
